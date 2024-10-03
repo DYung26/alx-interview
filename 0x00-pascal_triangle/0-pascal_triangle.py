@@ -2,13 +2,27 @@
 """
 This module contains a function to generate Pascal's Triangle.
 
-Pascal's Triangle is a triangular array of numbers where each number 
+Pascal's Triangle is a triangular array of numbers where each number
 is the sum of the two numbers directly above it in the previous row.
 The module uses the factorial function from the math library to calculate 
 the binomial coefficients required to construct each row of Pascal's Triangle.
 """
 
-from math import factorial
+
+def factorial(n):
+    """
+    Calculate the factorial of a number n.
+
+    Args:
+        n (int): The number to calculate the factorial for.
+
+    Returns:
+        int: The factorial of n.
+    """
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
 
 
 def pascal_triangle(n):
