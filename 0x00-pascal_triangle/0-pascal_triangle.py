@@ -14,7 +14,7 @@ def factorial(n):
     Calculate the factorial of a number n.
 
     The factorial of a non-negative integer n is the product of all positive
-    integers less than or equal to n. Factorial is represented as n! and 
+    integers less than or equal to n. Factorial is represented as n! and
     is defined as:
 
         n! = n * (n - 1) * (n - 2) * ... * 1
