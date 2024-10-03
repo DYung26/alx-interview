@@ -4,7 +4,7 @@ This module contains a function to generate Pascal's Triangle.
 
 Pascal's Triangle is a triangular array of numbers where each number
 is the sum of the two numbers directly above it in the previous row.
-The module uses the factorial function from the math library to calculate 
+The module uses a custom factorial function to calculate
 the binomial coefficients required to construct each row of Pascal's Triangle.
 """
 
@@ -12,6 +12,12 @@ the binomial coefficients required to construct each row of Pascal's Triangle.
 def factorial(n):
     """
     Calculate the factorial of a number n.
+
+    The factorial of a non-negative integer n is the product of all positive
+    integers less than or equal to n. Factorial is represented as n! and 
+    is defined as:
+
+        n! = n * (n - 1) * (n - 2) * ... * 1
 
     Args:
         n (int): The number to calculate the factorial for.
@@ -31,6 +37,8 @@ def pascal_triangle(n):
 
     Pascal's Triangle is a triangular array of numbers in which
     each number is the sum of the two directly above it in the previous row.
+    The function uses binomial coefficients (calculated via the custom
+    factorial function) to construct each row.
 
     Args:
         n (int): The number of rows of Pascal's Triangle to generate.
