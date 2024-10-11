@@ -28,7 +28,8 @@ def canUnlockAll(boxes):
         seen_boxes (set): A set that tracks the indices of boxes
         that have been unlocked.
         unseen_boxes (set): A set that tracks the indices of boxes
-        that can potentially be unlocked, based on keys found in unlocked boxes.
+        that can potentially be unlocked, based on keys found in 
+        unlocked boxes.
     '''
     n = len(boxes)
     seen_boxes = set([0])
