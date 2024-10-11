@@ -6,6 +6,7 @@ The goal is to determine if all boxes can be unlocked,
 starting from box 0 (which is always unlocked).
 '''
 
+
 def canUnlockAll(boxes):
     '''Determines if all boxes can be unlocked.
 
@@ -28,7 +29,7 @@ def canUnlockAll(boxes):
         seen_boxes (set): A set that tracks the indices of boxes
         that have been unlocked.
         unseen_boxes (set): A set that tracks the indices of boxes
-        that can potentially be unlocked, based on keys found in 
+        that can potentially be unlocked, based on keys found in
         unlocked boxes.
     '''
     n = len(boxes)
