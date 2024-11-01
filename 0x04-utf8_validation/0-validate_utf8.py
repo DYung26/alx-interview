@@ -4,10 +4,9 @@ This module provides a utility to validate whether a given list of integers
 represents a valid UTF-8 encoding. Each integer is treated as a byte, and the
 module confirms if these bytes form a valid UTF-8 encoded sequence.
 """
-from typing import List
 
 
-def validUTF8(data: List[int]) -> bool:
+def validUTF8(data):
     """
     Checks if a list of integers represents a valid UTF-8 encoding.
 
