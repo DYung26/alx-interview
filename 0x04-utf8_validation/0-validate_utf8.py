@@ -22,8 +22,10 @@ def validUTF8(data: List[int]) -> bool:
     them as UTF-8. If decoding succeeds, the data is valid UTF-8; otherwise,
     an exception is caught, and the function returns False.
     """
+    if not all(isinstance(x, int) and 0 <= x <= 0xFF for x in data):
+        return False
     try:
         bytes(data).decode('utf-8')
         return True
-    except (ValueError, UnicodeDecodeError):
+    except UnicodeDecodeError:
         return False
