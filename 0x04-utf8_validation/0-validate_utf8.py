@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 This module provides a utility to validate whether a given list of integers
 represents a valid UTF-8 encoding. Each integer is treated as a byte, and the
