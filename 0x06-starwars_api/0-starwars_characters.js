@@ -5,7 +5,7 @@ const API_URL = 'https://swapi-api.alx-tools.com/api/films/'
 if (process.argv.length > 2) {
   request(`${API_URL}${process.argv[2]}/`, (err, _, body) => {
     if (err) {
-      console.error(err);
+      console.log(err);
     }
     const characters = JSON.parse(body).characters;
     const charactersName = characters.map(
