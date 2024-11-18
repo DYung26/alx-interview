@@ -3,10 +3,10 @@
 const request = require('request');
 const API_URL = 'https://swapi-api.alx-tools.com/api/films/'
 
-request(`${API_URL}${process.argv[2]}/`, (error, response, body) => {
+request(`${API_URL}${process.argv[2]}/`, (_, __, body) => {
   const characters = JSON.parse(body).characters;
   const charactersName = characters.map(character_url => new Promise((resolve, reject) => {
-    request(character_url, (error, response, body) => {
+    request(character_url, (___, ____, body) => {
       resolve(JSON.parse(body).name);
     });
   }));
