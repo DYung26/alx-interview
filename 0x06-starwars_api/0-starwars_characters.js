@@ -7,12 +7,13 @@ request(`${API_URL}${process.argv[2]}/`, (error, _, body) => {
     console.error(error);
   }
   const characters = JSON.parse(body).characters;
-  const charactersName = characters.map(character_url => new Promise((resolve, reject) => {
-    request(character_url, (error, __, body) => {
-      if (error) {
-        reject(error);
-      }
-      resolve(JSON.parse(body).name);
+  const charactersName = characters.map(
+    character_url => new Promise((resolve, reject) => {
+      request(character_url, (error, __, body) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(JSON.parse(body).name);
     });
   }));
 
