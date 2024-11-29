@@ -11,19 +11,3 @@ def makeChange(coins, total):
             dp[i] = min(dp[i], dp[i - coin] + 1)
 
     return dp[total] if dp[total] != float('inf') else -1
-
-'''
-def makeChange(coins, total):
-    if total <= 0:
-        return 0
-    coins.sort(reverse=True)
-    t_coin = 0
-    counter = 0
-    for coin in coins:
-        while coin + t_coin <= total:
-            t_coin += coin
-            counter += 1
-        if t_coin == total:
-            return counter
-    return -1
-'''
