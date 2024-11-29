@@ -8,9 +8,10 @@ denominations.
 The function uses dynamic programming to efficiently find the optimal
 solution.
 """
+from typing import List
 
 
-def makeChange(coins, total):
+def makeChange(coins: List[int], total: int) -> int:
     """
     Returns the minimum number of coins needed to make the total amount.
 
