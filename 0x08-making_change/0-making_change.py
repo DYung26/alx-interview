@@ -9,6 +9,7 @@ The function uses dynamic programming to efficiently find the optimal
 solution.
 """
 
+
 def makeChange(coins, total):
     """
     Returns the minimum number of coins needed to make the total amount.
