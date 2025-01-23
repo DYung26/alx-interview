@@ -1,166 +1,134 @@
-I will provide step-by-step solutions to the questions based on the given assignment and provide detailed explanations for each part.
+### Detailed Solutions for Each Question:
 
 ---
 
-### **Question One (a):**
-#### (i) Obtain the inverse Fourier transform of the following signals:
-1. \( G(w) = (5) divided by (j w minus 2) \)  
-2. \( H(w) = (12) divided by (w squared plus 4) \)  
-3. \( X(w) = (10) divided by (open bracket (j w minus 1) (j w minus 2) close bracket) \)  
+### **Question One**
 
-Let us solve each part step by step.
+#### (a) (i). **Obtain the Inverse Fourier Transform of G(w), H(w), and X(w):**
+The signals given are:
 
----
-
-#### **Solution for the first part:**
-1. \( G(w) = (5) divided by (j w minus 2) \).  
-We recall the **inverse Fourier transform formula**:  
-The inverse Fourier transform of \( (A) divided by (j w minus a) \) is equal to:
-\[ A multiplied by (e) raised to the power of (a t) multiplied by U(t), \]  
-where \( U(t) \) is the **unit step function**.
-
-Here, \( A = 5 \) and \( a = 2 \):
-\[ G(t) = (5) multiplied by (e) raised to the power of (2 t) multiplied by U(t). \]
-
-So, the final solution is:
-\( G(t) = 5 multiplied by exponential of (2 t) multiplied by U(t). \)
+1. G(w) = five divided by open bracket j w minus two closed bracket
+2. H(w) = twelve divided by open bracket w squared plus four closed bracket
+3. X(w) = ten divided by open bracket open bracket j w minus one closed bracket multiplied by open bracket j w minus two closed bracket closed bracket
 
 ---
 
-#### **Solution for the second part:**
-2. \( H(w) = (12) divided by (w squared plus 4) \).  
-We recall that the Fourier transform of \( (b) divided by (w squared plus a squared) \) is equal to:
-\[ b divided by (2 a) multiplied by exponential of minus (a) times the absolute value of t. \]  
+1. **For G(w):**  
+   - Expression: G(w) = five divided by open bracket j w minus two closed bracket
+   - The form of G(w) matches that of a shifted impulse function in Fourier Transform. Using the standard Fourier Transform rule, one can determine the time-domain representation:
+     \( F(jw) = \frac{A}{jw - a} \) transforms to \( f(t) = A \cdot e^{a \cdot t} \) for \( t \geq 0 \).
 
-In this problem, \( b = 12 \) and \( a squared = 4 \). From \( a squared = 4 \), \( a = 2 \).  
+     So:
+     - Here, A = five, and a = two.
+     - The inverse Fourier Transform of this function is: 
 
-Thus, \( H(t) = (12 divided by (2 multiplied by 2)) multiplied by exponential of minus (2 times the absolute value of t). \)  
-
-Simplifying:
-\[ H(t) = 3 multiplied by exponential of minus (2 times the absolute value of t). \]
-
-So, the final solution is:
-\( H(t) = 3 multiplied by exponential of minus (2 times the absolute value of t). \)
+       **g(t) = five multiplied by e raised to the power two t, for t greater than or equal to zero.**
 
 ---
 
-#### **Solution for the third part:**
-3. \( X(w) = 10 divided by ((j w minus 1) (j w minus 2)) \).  
-To find the inverse Fourier transform, we break this into **partial fractions**.  
+2. **For H(w):**  
+   - Expression: H(w) = twelve divided by open bracket w squared plus four closed bracket
+   - The form of H(w) matches that of the Fourier Transform of a cosine function. Using the property \( F(w) = \frac{A}{w^2 + \omega_0^2} \), it transforms to \( f(t) = A \cdot \cos(\omega_0 t) \).
 
-Write \( X(w) \) as:
-\[ X(w) = A divided by (j w minus 1) plus B divided by (j w minus 2), \]  
-where \( A \) and \( B \) are constants to be determined.  
+     So:
+     - Here, \( A = six \) (since twelve divided by two gives six), and \( \omega_0 = two \).
+     - The inverse Fourier Transform of this function is: 
 
-Multiply through by the denominator \( (j w minus 1)(j w minus 2) \):
-\[ 10 = A multiplied by (j w minus 2) plus B multiplied by (j w minus 1). \]  
-
-Expanding:
-\[ 10 = A multiplied by (j w) minus 2 A plus B multiplied by (j w) minus B. \]  
-
-Grouping terms:
-\[ 10 = (A plus B) multiplied by (j w) minus (2 A plus B). \]  
-
-Equating coefficients of \( j w \):
-\[ A plus B = 0. \]  
-
-Equating constants:
-\[ minus (2 A plus B) = 10. \]  
-
-From \( A plus B = 0 \), we get \( B = minus A \). Substitute into the second equation:
-\[ minus (2 A plus (minus A)) = 10. \]  
-\[ minus (2 A minus A) = 10. \]  
-\[ minus A = 10. \]  
-\[ A = minus 10. \]  
-
-Thus, \( B = minus A = 10. \)  
-
-So, the partial fraction decomposition is:
-\[ X(w) = (minus 10) divided by (j w minus 1) plus (10) divided by (j w minus 2). \]  
-
-Now, compute the inverse Fourier transform of each term:
-- The inverse Fourier transform of \( (minus 10) divided by (j w minus 1) \) is:
-  \( minus 10 multiplied by exponential of (1 t) multiplied by U(t). \)  
-
-- The inverse Fourier transform of \( (10) divided by (j w minus 2) \) is:
-  \( 10 multiplied by exponential of (2 t) multiplied by U(t). \)  
-
-Thus, combining the results:
-\[ X(t) = minus 10 multiplied by exponential of (t) multiplied by U(t) plus 10 multiplied by exponential of (2 t) multiplied by U(t). \]
+       **h(t) = six multiplied by cosine of two t.**
 
 ---
 
-#### **(ii) Why do we study Laplace Transform?**
-The Laplace transform is useful because:
-1. It simplifies the analysis of systems, especially in engineering, by converting differential equations into algebraic equations.
-2. It is helpful for solving linear time-invariant systems, such as circuits or mechanical systems.
-3. It can handle initial conditions easily, unlike Fourier Transform, which does not capture transient behaviors effectively.
+3. **For X(w):**  
+   - Expression: X(w) = ten divided by open bracket open bracket j w minus one closed bracket multiplied by open bracket j w minus two closed bracket closed bracket
+   - This is a product of two terms in the frequency domain, corresponding to a partial fraction decomposition in the time domain.
+
+     Rewrite X(w):  
+     \( X(w) = \frac{A}{jw - 1} + \frac{B}{jw - 2} \)
+
+     Solving for A and B using partial fraction decomposition:
+     \( A (jw - 2) + B (jw - 1) = 10 \)
+
+     Substitute values of w to solve:
+     - When \( jw = 1 \), \( A = 10 \).
+     - When \( jw = 2 \), \( B = -10 \).
+
+     Then:
+     \( X(w) = \frac{10}{jw - 1} - \frac{10}{jw - 2} \)
+
+     Now take the inverse Fourier Transform of each term:
+     - \( \frac{10}{jw - 1} \) becomes \( 10 e^{t}, t > 0 \)
+     - \( -\frac{10}{jw - 2} \) becomes \( -10 e^{2t}, t > 0 \)
+
+     Final result:  
+     **x(t) = ten multiplied by e raised to the power t minus ten multiplied by e raised to the power two t, for t greater than or equal to zero.**
 
 ---
 
-### **Question One (b):**
-#### It is desired to realize the transfer function \( V_2(s) divided by V_1(s) = (2 s) divided by (s squared plus 2 s plus 6) \) using the circuit in Figure 1. Choose \( R = 1 \) k Ohm and find \( L \) and \( C \).
+#### (a) (ii). **Why do we study Laplace Transform?**
 
-The transfer function given is:
-\[ V_2(s) divided by V_1(s) = (2 s) divided by (s squared plus 2 s plus 6). \]  
+The Laplace Transform is studied for several reasons, including:
 
----
-
-#### **Step 1: Compare with the standard form for an RLC circuit.**
-For the RLC series-parallel circuit in Figure 1, the transfer function is given by:
-\[ V_2(s) divided by V_1(s) = (s divided by (L)) divided by [(s squared plus (R divided by L) s plus (1 divided by (L multiplied by C))]. \]  
-
-From the problem:
-- The numerator is \( (2 multiplied by s) divided by (...). \) Hence, \( R divided by L = 2. \)  
-- Constant term in the denominator: \( (1 divided by (L multiplied by C)) = 6. \)  
+1. **Simplification of Differential Equations:** It converts complex differential equations into simpler algebraic equations, which are easier to solve.
+2. **Analysis of Systems:** It is extensively used in analyzing linear time-invariant systems, especially in control and signal processing.
+3. **Initial and Final Value Theorems:** It provides powerful tools such as the initial value and final value theorems, allowing us to analyze system behavior at the start and end of processes.
+4. **Handling of Discontinuous Inputs:** Laplace Transform is particularly useful for systems with piecewise or discontinuous inputs, as it allows these to be efficiently processed.
 
 ---
 
-#### **Step 2: Solve for \( L \).**
-From \( R divided by L = 2 \), substitute \( R = 1 \) k Ohm \( = 1000 Ohms \):
-\[ 1000 divided by L = 2. \]  
-\[ L = 1000 divided by 2. \]  
-\[ L = 500 Henrys. \]  
+#### (b) **Realizing the Transfer Function and Finding L and C**
+
+The transfer function given is:  
+"V two divided by V one equals two s divided by s squared plus two s plus six."  
+
+**Steps:**
+
+1. **Generalize the Circuit:**  
+   The circuit comprises a resistor \( R \), an inductor \( L \), and a capacitor \( C \). The transfer function is given by:
+
+   \( V two divided by V one = \frac{s \times C \times R}{1 + s \times C \times R + s^2 \times L \times C} \)
+
+   Compare this with the transfer function: \( \frac{2s}{s^2 + 2s + 6} \).
+
+2. **Compare Terms:**  
+   - From the numerator: \( C \times R = 2 \), so \( C = \frac{2}{R} \). \( R = 1 k \Omega = 1000 \, \Omega \). Thus:
+
+     \( C = \frac{2}{1000} = 0.002 \, F = 2 \, mF \).
+
+   - From the denominator: \( L \times C = 6 \). Substitute \( C = 0.002 \):
+
+     \( L = \frac{6}{C} = \frac{6}{0.002} = 3000 \, H = 3 \, H. \)
+
+**Final Values:**  
+- Inductance \( L = 3 \, H \)  
+- Capacitance \( C = 2 \, mF \)
 
 ---
 
-#### **Step 3: Solve for \( C \).**
-From \( 1 divided by (L multiplied by C) = 6 \), substitute \( L = 500 Henrys \):
-\[ 1 divided by (500 multiplied by C) = 6. \]  
-\[ C = 1 divided by (500 multiplied by 6). \]  
-\[ C = 1 divided by 3000. \]  
-\[ C = 0.000333 Farads or 333 microFarads. \]  
+### **Question Two**
+
+#### (a) **Brief Explanation of Network Synthesis**
+
+Network synthesis refers to designing and constructing a physical network (using resistors, capacitors, inductors, etc.) that meets a desired transfer function or impedance specification. The goal is to derive a physical and realizable network from mathematical representations or requirements.
 
 ---
 
-#### **Final Answer for Question One (b):**
-- \( R = 1 \) k Ohm \( = 1000 Ohms \).  
-- \( L = 500 Henrys. \)  
-- \( C = 333 \) microFarads.
+#### (b) **Find the Node Voltages in Figure 2**
 
----  
+The circuit contains multiple resistors, a DC voltage source, a current source, and dependent sources, requiring node voltage analysis.
 
-### **Question Two:**
-#### (a) Briefly explain Network Synthesis.
-Network synthesis is the process of designing a network or electrical circuit that satisfies a given impedance or transfer function. The goal is to determine the component values (resistors, capacitors, and inductors) that will produce the desired performance. It is commonly used in filter design and signal processing to meet specifications such as frequency response.
+Define the reference node \( V_0 = 0 \). Let the voltages at the nodes be \( V_1 \), \( V_2 \), etc. Apply Kirchhoff’s Current Law (KCL) to each node.
+
+(Solution to be continued step-by-step…)
 
 ---
 
-#### (b) Solve the circuit in Figure 2.
-To solve for the node voltage, we apply **Kirchhoff's Current Law (KCL)** at each major node.  
+### **Question Three**
 
-(Detailed solutions will follow step-wise, depending on the specific image processing). 
+#### (a) **Conditions Necessary for Network Stability**
 
-(Comment and clarify which parts of Figure 2 you want detailed). 
+The conditions for a network to be stable are:
 
---- 
+1. **BIBO Stability:** The system must be bounded-input, bounded-output stable. This means any bounded input should yield a bounded output.
+2. **Poles of the Transfer Function:** All poles of the transfer function must lie in the left-half of the complex plane for continuous-time systems.
+3. **Causality:** The network must be causal to ensure responses occur only after inputs are applied.
 
-### **Question Three:**
-#### List the conditions necessary for network stability.
-The necessary conditions for network stability include:
-1. **Poles of the system**: All poles of the transfer function must lie in the left-half of the complex plane (negative real part).
-2. **Bounded-input bounded-output (BIBO) stability**: For every bounded input, the output must also be bounded.
-
---- 
-
-If further clarification or specific solutions are needed, kindly provide details!
