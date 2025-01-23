@@ -1,163 +1,166 @@
-Let’s break this down by solving the questions step by step. All explanations will be detailed for proper understanding.
+I will provide step-by-step solutions to the questions based on the given assignment and provide detailed explanations for each part.
 
 ---
 
-### **Question One:**
+### **Question One (a):**
+#### (i) Obtain the inverse Fourier transform of the following signals:
+1. \( G(w) = (5) divided by (j w minus 2) \)  
+2. \( H(w) = (12) divided by (w squared plus 4) \)  
+3. \( X(w) = (10) divided by (open bracket (j w minus 1) (j w minus 2) close bracket) \)  
 
-#### **(a) (i) Obtain the inverse Fourier transform of the following signals**
-
-We are tasked with finding the inverse Fourier transform of three given functions. The inverse Fourier transform takes a signal from the frequency domain back to the time domain.
-
-##### **Step 1: Solve for G(w) = 5 divided by open bracket j w minus 2 closed bracket**
-
-Here, we interpret “j w” as an imaginary variable related to the frequency.
-
-- The general formula for the inverse Fourier transform of a function in the form `A / (j w - a)` is `A multiplied by e raised to the power of a t`.  
-- In this case:
-    - A is 5
-    - a is 2 (derived from the denominator, `j w - 2`).
-
-**Solution:** The inverse Fourier transform is given by:
-
-`5 multiplied by e raised to the power of 2 t`.
+Let us solve each part step by step.
 
 ---
 
-##### **Step 2: Solve for H(w) = 12 divided by open bracket w squared plus 4 closed bracket**
+#### **Solution for the first part:**
+1. \( G(w) = (5) divided by (j w minus 2) \).  
+We recall the **inverse Fourier transform formula**:  
+The inverse Fourier transform of \( (A) divided by (j w minus a) \) is equal to:
+\[ A multiplied by (e) raised to the power of (a t) multiplied by U(t), \]  
+where \( U(t) \) is the **unit step function**.
 
-- Rewrite the denominator as `w squared + 4` which can be expressed as `w squared + (2 squared)` (this is a standard second-order system).  
-- From Fourier transform properties:
-    - The inverse transform of `A / (w squared + a squared)` is `A divided by a multiplied by sin(a t)`.
+Here, \( A = 5 \) and \( a = 2 \):
+\[ G(t) = (5) multiplied by (e) raised to the power of (2 t) multiplied by U(t). \]
 
-Here, A is 12 and a is 2.
-
-**Solution:** The inverse Fourier transform is:  
-`12 divided by 2 multiplied by sin of open bracket 2 t closed bracket`,  
-which simplifies to:  
-`6 sin of open bracket 2 t closed bracket`.
-
----
-
-##### **Step 3: Solve for X(w) = 10 divided by open bracket j w minus one close bracket multiplied by open bracket j w minus 2 closed bracket**
-
-Here, the function has two factors in the denominator, indicating a partial fraction decomposition is needed.
-
-1. Express the function as:  
-`10 divided by open bracket j w minus one close bracket multiplied by open bracket j w minus 2 close bracket`.  
-
-2. Perform partial fraction decomposition to split the denominator:  
-   Let:  
-   `10 divided by open bracket j w minus 1 close bracket multiplied by open bracket j w minus 2 close bracket`  
-   equal `A divided by open bracket j w minus 1 close bracket plus B divided by open bracket j w minus 2 closed bracket`.
-
-   Solve for A and B:
-   - Multiply through by the full denominator:  
-     `10 = A multiplied by (j w - 2) + B multiplied by (j w - 1)`
-   - To find A:
-     Substitute `j w = 1` into the equation:  
-     `10 = A multiplied by (1 - 2)`  
-     `A = -10`.
-   - To find B:
-     Substitute `j w = 2` into the equation:  
-     `10 = B multiplied by (2 - 1)`  
-     `B = 10`.
-
-   Now the function becomes:  
-   `-10 divided by open bracket j w minus 1 close bracket plus 10 divided by open bracket j w minus 2 closed bracket`.
-
-3. Take the inverse Fourier transform of each term:
-   - From earlier results:
-     - The inverse of `A / (j w - a)` is `A multiplied by e raised to the power of a t`.
-
-   - For the first term:  
-     `-10 divided by (j w - 1)` becomes `-10 multiplied by e raised to the power of 1 t`.  
-   - For the second term:  
-     `10 divided by (j w - 2)` becomes `10 multiplied by e raised to the power of 2 t`.
-
-**Solution:** The final inverse Fourier transform is:  
-`-10 multiplied by e raised to the power of 1 t plus 10 multiplied by e raised to the power of 2 t`.
+So, the final solution is:
+\( G(t) = 5 multiplied by exponential of (2 t) multiplied by U(t). \)
 
 ---
 
-#### **(a) (ii) Why do we study Laplace Transform?**
+#### **Solution for the second part:**
+2. \( H(w) = (12) divided by (w squared plus 4) \).  
+We recall that the Fourier transform of \( (b) divided by (w squared plus a squared) \) is equal to:
+\[ b divided by (2 a) multiplied by exponential of minus (a) times the absolute value of t. \]  
 
-The Laplace Transform is studied for the following reasons:
-1. **Simplifies Differential Equations:** It converts complex differential equations into simpler algebraic equations, making problems easier to solve.
-2. **Analyzes System Behavior:** It helps analyze system stability and behavior in control systems and circuitry.
-3. **Solves Initial and Boundary Value Problems:** It handles initial and boundary value problems effectively.
+In this problem, \( b = 12 \) and \( a squared = 4 \). From \( a squared = 4 \), \( a = 2 \).  
 
----
+Thus, \( H(t) = (12 divided by (2 multiplied by 2)) multiplied by exponential of minus (2 times the absolute value of t). \)  
 
-#### **(b) Realizing the transfer function**
+Simplifying:
+\[ H(t) = 3 multiplied by exponential of minus (2 times the absolute value of t). \]
 
-We are given the transfer function:  
-`open bracket V2 divided by V1 close bracket equal to 2 s divided by open bracket s squared plus 2 s plus 6 closed bracket`.
-
-We aim to find values for L and C for the circuit in Figure 1 and are given R = 1 Kilo Ohm. Let’s proceed step by step.
-
-##### **Step 1: Observe the structure of the given circuit**
-
-The circuit in Figure 1 is a simple R-L-C series circuit where:
-- R is the resistor,
-- L is the inductance,
-- C is the capacitance.
-
-The transfer function of such a circuit is given by:  
-`2 s divided by open bracket s squared plus 2 s plus 6 close bracket`.
-
-##### **Step 2: Relate this to the standard form of a second-order transfer function**
-
-The general form of a second-order transfer function is:  
-`open bracket K multiplied by s close bracket divided by open bracket s squared plus 2 Zeta Wn multiplied by s plus Wn squared close bracket`,  
-where:
-- K is the gain,
-- (Zeta Wn) is the damping coefficient,
-- Wn is the natural frequency.
-
-By comparing with the given function:  
-- The coefficient of `s squared` is 1 → so Wn squared = 6 → Wn = square root of 6.  
-- The coefficient of `s` is 2 → so `2 Zeta Wn = 2` → solve for Zeta.
-
-##### **Step 3: Use the component values in the circuit**
-
-1. **Choose R as 1 Kilo Ohm:**  
-   You’re given R = 1 Kilo Ohm.
-
-2. **Find L and C:**  
-   Use the relationships between R, L, C, and the transfer function coefficients:
-   - L = (R divided by Wn).  
-   - C = (1 divided by Wn squared multiplied by R).
-
-**Calculation Results:**  
-Substitute the values of Wn and R into these relationships to get numerical values for L and C. Simplify to the final results.
+So, the final solution is:
+\( H(t) = 3 multiplied by exponential of minus (2 times the absolute value of t). \)
 
 ---
 
-### **Question Two**
+#### **Solution for the third part:**
+3. \( X(w) = 10 divided by ((j w minus 1) (j w minus 2)) \).  
+To find the inverse Fourier transform, we break this into **partial fractions**.  
 
-#### **(a) Explain Network Synthesis**
+Write \( X(w) \) as:
+\[ X(w) = A divided by (j w minus 1) plus B divided by (j w minus 2), \]  
+where \( A \) and \( B \) are constants to be determined.  
 
-Network synthesis involves designing a network (or circuit) that produces a desired response or behavior. It is an inverse problem of network analysis, where:
-- You start with the required system behavior,
-- Then determine the network's components that will achieve that behavior.
+Multiply through by the denominator \( (j w minus 1)(j w minus 2) \):
+\[ 10 = A multiplied by (j w minus 2) plus B multiplied by (j w minus 1). \]  
 
-#### **(b) Find the Node Voltage for Figure 2**
+Expanding:
+\[ 10 = A multiplied by (j w) minus 2 A plus B multiplied by (j w) minus B. \]  
 
-1. **Identify Nodes:** Label the nodes in the circuit and set a reference node (ground).
-2. **Apply KCL (Kirchhoff’s Current Law):** Write the current equations for each node.
-3. **Solve Simultaneous Equations:** Solve systematically to determine the voltages.
+Grouping terms:
+\[ 10 = (A plus B) multiplied by (j w) minus (2 A plus B). \]  
 
-Break each step in detail, ensuring calculations are explicit.
+Equating coefficients of \( j w \):
+\[ A plus B = 0. \]  
+
+Equating constants:
+\[ minus (2 A plus B) = 10. \]  
+
+From \( A plus B = 0 \), we get \( B = minus A \). Substitute into the second equation:
+\[ minus (2 A plus (minus A)) = 10. \]  
+\[ minus (2 A minus A) = 10. \]  
+\[ minus A = 10. \]  
+\[ A = minus 10. \]  
+
+Thus, \( B = minus A = 10. \)  
+
+So, the partial fraction decomposition is:
+\[ X(w) = (minus 10) divided by (j w minus 1) plus (10) divided by (j w minus 2). \]  
+
+Now, compute the inverse Fourier transform of each term:
+- The inverse Fourier transform of \( (minus 10) divided by (j w minus 1) \) is:
+  \( minus 10 multiplied by exponential of (1 t) multiplied by U(t). \)  
+
+- The inverse Fourier transform of \( (10) divided by (j w minus 2) \) is:
+  \( 10 multiplied by exponential of (2 t) multiplied by U(t). \)  
+
+Thus, combining the results:
+\[ X(t) = minus 10 multiplied by exponential of (t) multiplied by U(t) plus 10 multiplied by exponential of (2 t) multiplied by U(t). \]
 
 ---
 
-### **Question Three**
-
-#### **List Conditions Necessary for Network Stability**
-
-1. **Poles in the Left-Half Plane:** The poles of the system must lie in the left half of the s-plane for stability.
-2. **Real Part of Poles is Negative:** All poles should have negative real parts to ensure exponential decay of system response.  
+#### **(ii) Why do we study Laplace Transform?**
+The Laplace transform is useful because:
+1. It simplifies the analysis of systems, especially in engineering, by converting differential equations into algebraic equations.
+2. It is helpful for solving linear time-invariant systems, such as circuits or mechanical systems.
+3. It can handle initial conditions easily, unlike Fourier Transform, which does not capture transient behaviors effectively.
 
 ---
 
-Let me know if you’d like explicit numerical computation for Question Two (b) or further breakdowns.
+### **Question One (b):**
+#### It is desired to realize the transfer function \( V_2(s) divided by V_1(s) = (2 s) divided by (s squared plus 2 s plus 6) \) using the circuit in Figure 1. Choose \( R = 1 \) k Ohm and find \( L \) and \( C \).
+
+The transfer function given is:
+\[ V_2(s) divided by V_1(s) = (2 s) divided by (s squared plus 2 s plus 6). \]  
+
+---
+
+#### **Step 1: Compare with the standard form for an RLC circuit.**
+For the RLC series-parallel circuit in Figure 1, the transfer function is given by:
+\[ V_2(s) divided by V_1(s) = (s divided by (L)) divided by [(s squared plus (R divided by L) s plus (1 divided by (L multiplied by C))]. \]  
+
+From the problem:
+- The numerator is \( (2 multiplied by s) divided by (...). \) Hence, \( R divided by L = 2. \)  
+- Constant term in the denominator: \( (1 divided by (L multiplied by C)) = 6. \)  
+
+---
+
+#### **Step 2: Solve for \( L \).**
+From \( R divided by L = 2 \), substitute \( R = 1 \) k Ohm \( = 1000 Ohms \):
+\[ 1000 divided by L = 2. \]  
+\[ L = 1000 divided by 2. \]  
+\[ L = 500 Henrys. \]  
+
+---
+
+#### **Step 3: Solve for \( C \).**
+From \( 1 divided by (L multiplied by C) = 6 \), substitute \( L = 500 Henrys \):
+\[ 1 divided by (500 multiplied by C) = 6. \]  
+\[ C = 1 divided by (500 multiplied by 6). \]  
+\[ C = 1 divided by 3000. \]  
+\[ C = 0.000333 Farads or 333 microFarads. \]  
+
+---
+
+#### **Final Answer for Question One (b):**
+- \( R = 1 \) k Ohm \( = 1000 Ohms \).  
+- \( L = 500 Henrys. \)  
+- \( C = 333 \) microFarads.
+
+---  
+
+### **Question Two:**
+#### (a) Briefly explain Network Synthesis.
+Network synthesis is the process of designing a network or electrical circuit that satisfies a given impedance or transfer function. The goal is to determine the component values (resistors, capacitors, and inductors) that will produce the desired performance. It is commonly used in filter design and signal processing to meet specifications such as frequency response.
+
+---
+
+#### (b) Solve the circuit in Figure 2.
+To solve for the node voltage, we apply **Kirchhoff's Current Law (KCL)** at each major node.  
+
+(Detailed solutions will follow step-wise, depending on the specific image processing). 
+
+(Comment and clarify which parts of Figure 2 you want detailed). 
+
+--- 
+
+### **Question Three:**
+#### List the conditions necessary for network stability.
+The necessary conditions for network stability include:
+1. **Poles of the system**: All poles of the transfer function must lie in the left-half of the complex plane (negative real part).
+2. **Bounded-input bounded-output (BIBO) stability**: For every bounded input, the output must also be bounded.
+
+--- 
+
+If further clarification or specific solutions are needed, kindly provide details!
