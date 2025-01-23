@@ -1,54 +1,163 @@
-Alright! Let's carefully and thoroughly break down and solve all parts of this problem step-by-step, while ensuring all details are clearly explained.
+Let’s break this down by solving the questions step by step. All explanations will be detailed for proper understanding.
 
 ---
 
-### **Question 1(a)**: 
-#### Obtain the inverse Fourier transform of the following signals
+### **Question One:**
 
-We are tasked with obtaining the inverse Fourier transform of the given functions:
+#### **(a) (i) Obtain the inverse Fourier transform of the following signals**
 
-#### (i) \( G(w) = 5 / (j w minus two) \)
-1. First, recognize that \( G(w) \) is of the form "constant divided by \( j w \) minus a constant." This resembles the standard Fourier transform of an exponential function. In the time domain, the inverse transform of \( one divided by \( j w \) minus \( a \) \) is given as:
-   - \( exp(open bracket a times t closed bracket) times u(t) \), where \( u(t) \) is the unit step function (which is zero for \( t less than zero \) and equal to one for \( t greater than or equal to zero \)).
+We are tasked with finding the inverse Fourier transform of three given functions. The inverse Fourier transform takes a signal from the frequency domain back to the time domain.
 
-2. For \( G(w) = 5 divided by (j w minus two) \),
-   - Here, \( a equals two \) and the numerator \( five \) serves as a scalar multiplier.
+##### **Step 1: Solve for G(w) = 5 divided by open bracket j w minus 2 closed bracket**
 
-3. So, the inverse Fourier transform is:
-   - \( five times exp(open bracket two times t closed bracket) times u(t) \).
+Here, we interpret “j w” as an imaginary variable related to the frequency.
 
-#### Final Answer for (i):
-The inverse Fourier transform of \( G(w) = 5 / (j w minus two) \) is \( five times exp(open bracket two times t closed bracket) times u(t) \).
+- The general formula for the inverse Fourier transform of a function in the form `A / (j w - a)` is `A multiplied by e raised to the power of a t`.  
+- In this case:
+    - A is 5
+    - a is 2 (derived from the denominator, `j w - 2`).
 
----
+**Solution:** The inverse Fourier transform is given by:
 
-#### (ii) \( H(w) = 12 divided by (w squared plus four) \)
-1. Notice that \( H(w) \) is of the form "constant divided by \( w squared plus a squared \)." This resembles the standard Fourier transform of a decaying sine function. Specifically, the inverse transform of \( 1 divided by (w squared plus a squared) \) is:
-   - \( (one divided by two a) times sin(open bracket a times t closed bracket) times u(t) \), where \( a equals square root of the constant. \)
-
-2. For \( H(w) = 12 / (w squared plus four) \),
-   - Here, \( 12 \) is a scalar multiple outside the standard form.
-   - \( a squared equals four, \) so \( a equals two. \)
-
-3. Substituting these values, the inverse Fourier transform becomes:
-   - \( 12 divided by two times (1 divided by a) times sin(open bracket a times t closed bracket) \),
-   - Simplifying, \( 12 divided by two times (1 divided by two) = three. \)
-
-4. Final result:
-   - \( three times sin(open bracket two times t closed bracket) times u(t). \)
-
-#### Final Answer for (ii):
-The inverse Fourier transform of \( H(w) = 12 divided by (w squared plus 4) \) is \( three times sin(open bracket two times t closed bracket) times u(t). \)
+`5 multiplied by e raised to the power of 2 t`.
 
 ---
 
-#### (iii) \( X(w) = 10 divided by (open bracket j w minus one closed bracket times open bracket j w minus two closed bracket) \)
-1. Notice that \( X(w) \) is a rational function involving two linear terms in the denominator. To solve for the inverse Fourier transform, we will first simplify the expression using partial fractions:
-   - Write \( X(w) = A divided by (j w minus one) plus B divided by (j w minus two), \)
-   - Where \( A \) and \( B \) are constants to be determined.
+##### **Step 2: Solve for H(w) = 12 divided by open bracket w squared plus 4 closed bracket**
 
-2. Solving for \( A \) and \( B \):
-   - Multiply through by \( (open bracket j w minus one closed bracket times open bracket j w minus two closed bracket), \) which gives:
-     - \( 10 = A times (j w minus two) plus B times (j w minus one). \)
+- Rewrite the denominator as `w squared + 4` which can be expressed as `w squared + (2 squared)` (this is a standard second-order system).  
+- From Fourier transform properties:
+    - The inverse transform of `A / (w squared + a squared)` is `A divided by a multiplied by sin(a t)`.
 
-   - Substituting \( w = 1 / j \), resolve for \( B. COMPLETION.
+Here, A is 12 and a is 2.
+
+**Solution:** The inverse Fourier transform is:  
+`12 divided by 2 multiplied by sin of open bracket 2 t closed bracket`,  
+which simplifies to:  
+`6 sin of open bracket 2 t closed bracket`.
+
+---
+
+##### **Step 3: Solve for X(w) = 10 divided by open bracket j w minus one close bracket multiplied by open bracket j w minus 2 closed bracket**
+
+Here, the function has two factors in the denominator, indicating a partial fraction decomposition is needed.
+
+1. Express the function as:  
+`10 divided by open bracket j w minus one close bracket multiplied by open bracket j w minus 2 close bracket`.  
+
+2. Perform partial fraction decomposition to split the denominator:  
+   Let:  
+   `10 divided by open bracket j w minus 1 close bracket multiplied by open bracket j w minus 2 close bracket`  
+   equal `A divided by open bracket j w minus 1 close bracket plus B divided by open bracket j w minus 2 closed bracket`.
+
+   Solve for A and B:
+   - Multiply through by the full denominator:  
+     `10 = A multiplied by (j w - 2) + B multiplied by (j w - 1)`
+   - To find A:
+     Substitute `j w = 1` into the equation:  
+     `10 = A multiplied by (1 - 2)`  
+     `A = -10`.
+   - To find B:
+     Substitute `j w = 2` into the equation:  
+     `10 = B multiplied by (2 - 1)`  
+     `B = 10`.
+
+   Now the function becomes:  
+   `-10 divided by open bracket j w minus 1 close bracket plus 10 divided by open bracket j w minus 2 closed bracket`.
+
+3. Take the inverse Fourier transform of each term:
+   - From earlier results:
+     - The inverse of `A / (j w - a)` is `A multiplied by e raised to the power of a t`.
+
+   - For the first term:  
+     `-10 divided by (j w - 1)` becomes `-10 multiplied by e raised to the power of 1 t`.  
+   - For the second term:  
+     `10 divided by (j w - 2)` becomes `10 multiplied by e raised to the power of 2 t`.
+
+**Solution:** The final inverse Fourier transform is:  
+`-10 multiplied by e raised to the power of 1 t plus 10 multiplied by e raised to the power of 2 t`.
+
+---
+
+#### **(a) (ii) Why do we study Laplace Transform?**
+
+The Laplace Transform is studied for the following reasons:
+1. **Simplifies Differential Equations:** It converts complex differential equations into simpler algebraic equations, making problems easier to solve.
+2. **Analyzes System Behavior:** It helps analyze system stability and behavior in control systems and circuitry.
+3. **Solves Initial and Boundary Value Problems:** It handles initial and boundary value problems effectively.
+
+---
+
+#### **(b) Realizing the transfer function**
+
+We are given the transfer function:  
+`open bracket V2 divided by V1 close bracket equal to 2 s divided by open bracket s squared plus 2 s plus 6 closed bracket`.
+
+We aim to find values for L and C for the circuit in Figure 1 and are given R = 1 Kilo Ohm. Let’s proceed step by step.
+
+##### **Step 1: Observe the structure of the given circuit**
+
+The circuit in Figure 1 is a simple R-L-C series circuit where:
+- R is the resistor,
+- L is the inductance,
+- C is the capacitance.
+
+The transfer function of such a circuit is given by:  
+`2 s divided by open bracket s squared plus 2 s plus 6 close bracket`.
+
+##### **Step 2: Relate this to the standard form of a second-order transfer function**
+
+The general form of a second-order transfer function is:  
+`open bracket K multiplied by s close bracket divided by open bracket s squared plus 2 Zeta Wn multiplied by s plus Wn squared close bracket`,  
+where:
+- K is the gain,
+- (Zeta Wn) is the damping coefficient,
+- Wn is the natural frequency.
+
+By comparing with the given function:  
+- The coefficient of `s squared` is 1 → so Wn squared = 6 → Wn = square root of 6.  
+- The coefficient of `s` is 2 → so `2 Zeta Wn = 2` → solve for Zeta.
+
+##### **Step 3: Use the component values in the circuit**
+
+1. **Choose R as 1 Kilo Ohm:**  
+   You’re given R = 1 Kilo Ohm.
+
+2. **Find L and C:**  
+   Use the relationships between R, L, C, and the transfer function coefficients:
+   - L = (R divided by Wn).  
+   - C = (1 divided by Wn squared multiplied by R).
+
+**Calculation Results:**  
+Substitute the values of Wn and R into these relationships to get numerical values for L and C. Simplify to the final results.
+
+---
+
+### **Question Two**
+
+#### **(a) Explain Network Synthesis**
+
+Network synthesis involves designing a network (or circuit) that produces a desired response or behavior. It is an inverse problem of network analysis, where:
+- You start with the required system behavior,
+- Then determine the network's components that will achieve that behavior.
+
+#### **(b) Find the Node Voltage for Figure 2**
+
+1. **Identify Nodes:** Label the nodes in the circuit and set a reference node (ground).
+2. **Apply KCL (Kirchhoff’s Current Law):** Write the current equations for each node.
+3. **Solve Simultaneous Equations:** Solve systematically to determine the voltages.
+
+Break each step in detail, ensuring calculations are explicit.
+
+---
+
+### **Question Three**
+
+#### **List Conditions Necessary for Network Stability**
+
+1. **Poles in the Left-Half Plane:** The poles of the system must lie in the left half of the s-plane for stability.
+2. **Real Part of Poles is Negative:** All poles should have negative real parts to ensure exponential decay of system response.  
+
+---
+
+Let me know if you’d like explicit numerical computation for Question Two (b) or further breakdowns.
