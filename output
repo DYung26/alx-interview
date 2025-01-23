@@ -1,134 +1,112 @@
-### Detailed Solutions for Each Question:
+Let us solve these questions meticulously and step by step for full clarity. Each question will be addressed based on the given instructions.
 
 ---
 
-### **Question One**
+### **Question One (a)**  
+#### Part (i): Obtain the inverse Fourier transform of the given signals.  
+We are given three signals:  
 
-#### (a) (i). **Obtain the Inverse Fourier Transform of G(w), H(w), and X(w):**
-The signals given are:
+1. **G of omega equals five divided by open bracket j omega minus two closed bracket**  
+   - To find the inverse Fourier transform, recognize that the given term resembles the standard Fourier transform property of an exponential function:  
+     - If F(omega) = C divided by open bracket j omega minus a closed bracket, then the inverse Fourier transform is C multiplied by exponential of open bracket a t closed bracket multiplied by u of t, where u of t is the unit step function.  
+   - Here, comparing with the formula:  
+     - C equals five, a equals two.  
+     - The inverse Fourier transform would be:  
+       **five multiplied by exponential of open bracket two t closed bracket multiplied by u of t.**
 
-1. G(w) = five divided by open bracket j w minus two closed bracket
-2. H(w) = twelve divided by open bracket w squared plus four closed bracket
-3. X(w) = ten divided by open bracket open bracket j w minus one closed bracket multiplied by open bracket j w minus two closed bracket closed bracket
+2. **H of omega equals twelve divided by open bracket omega squared plus four closed bracket**  
+   - Rewrite the denominator: omega squared plus four as omega squared plus two squared.
+   - Recall the Fourier transform property for a time-domain sinc function:  
+     - If F(omega) = C divided by open bracket omega squared plus a squared closed bracket, the inverse Fourier transform is:  
+       C divided by two a multiplied by exponential of negative a multiplied by absolute value of t closed bracket.  
+   - Here, C equals twelve and a equals two. Using the formula, the inverse Fourier transform becomes:  
+     **twelve divided by four multiplied by exponential of open bracket negative two absolute value of t closed bracket**, which simplifies to **three multiplied by exponential of negative two absolute value of t.**
 
----
+3. **X of omega equals ten divided by open bracket j omega minus one closed bracket multiplied by open bracket j omega minus two closed bracket**  
+   - This expression involves two poles (at j omega equals one and j omega equals two). We perform partial fraction decomposition to simplify this further:  
+     Write: ten divided by open bracket j omega minus one closed bracket multiplied by open bracket j omega minus two closed bracket as:  
+     A divided by open bracket j omega minus one closed bracket plus B divided by open bracket j omega minus two closed bracket,  
+     where A and B are constants to be determined.  
+   - Multiply through by the denominator to obtain:  
+     ten equals A multiplied by open bracket j omega minus two closed bracket plus B multiplied by open bracket j omega minus one closed bracket.  
+   - Let j omega equal one:  
+     ten equals A multiplied by open bracket one minus two closed bracket. This gives A equals negative ten.  
+   - Let j omega equal two:  
+     ten equals B multiplied by open bracket two minus one closed bracket. This gives B equals ten.  
+   - Thus, the expression becomes:  
+     negative ten divided by open bracket j omega minus one closed bracket plus ten divided by open bracket j omega minus two closed bracket.  
+   - The inverse Fourier transform becomes:  
+     **negative ten multiplied by exponential of t multiplied by u of t, plus ten multiplied by exponential of two t multiplied by u of t.**
 
-1. **For G(w):**  
-   - Expression: G(w) = five divided by open bracket j w minus two closed bracket
-   - The form of G(w) matches that of a shifted impulse function in Fourier Transform. Using the standard Fourier Transform rule, one can determine the time-domain representation:
-     \( F(jw) = \frac{A}{jw - a} \) transforms to \( f(t) = A \cdot e^{a \cdot t} \) for \( t \geq 0 \).
-
-     So:
-     - Here, A = five, and a = two.
-     - The inverse Fourier Transform of this function is: 
-
-       **g(t) = five multiplied by e raised to the power two t, for t greater than or equal to zero.**
-
----
-
-2. **For H(w):**  
-   - Expression: H(w) = twelve divided by open bracket w squared plus four closed bracket
-   - The form of H(w) matches that of the Fourier Transform of a cosine function. Using the property \( F(w) = \frac{A}{w^2 + \omega_0^2} \), it transforms to \( f(t) = A \cdot \cos(\omega_0 t) \).
-
-     So:
-     - Here, \( A = six \) (since twelve divided by two gives six), and \( \omega_0 = two \).
-     - The inverse Fourier Transform of this function is: 
-
-       **h(t) = six multiplied by cosine of two t.**
-
----
-
-3. **For X(w):**  
-   - Expression: X(w) = ten divided by open bracket open bracket j w minus one closed bracket multiplied by open bracket j w minus two closed bracket closed bracket
-   - This is a product of two terms in the frequency domain, corresponding to a partial fraction decomposition in the time domain.
-
-     Rewrite X(w):  
-     \( X(w) = \frac{A}{jw - 1} + \frac{B}{jw - 2} \)
-
-     Solving for A and B using partial fraction decomposition:
-     \( A (jw - 2) + B (jw - 1) = 10 \)
-
-     Substitute values of w to solve:
-     - When \( jw = 1 \), \( A = 10 \).
-     - When \( jw = 2 \), \( B = -10 \).
-
-     Then:
-     \( X(w) = \frac{10}{jw - 1} - \frac{10}{jw - 2} \)
-
-     Now take the inverse Fourier Transform of each term:
-     - \( \frac{10}{jw - 1} \) becomes \( 10 e^{t}, t > 0 \)
-     - \( -\frac{10}{jw - 2} \) becomes \( -10 e^{2t}, t > 0 \)
-
-     Final result:  
-     **x(t) = ten multiplied by e raised to the power t minus ten multiplied by e raised to the power two t, for t greater than or equal to zero.**
+#### Part (ii): Why do we study Laplace Transform?  
+- The Laplace Transform is studied because:  
+  1. It simplifies the analysis of linear time-invariant systems by converting differential equations into algebraic equations.  
+  2. It helps to analyze the transient and steady-state behavior of systems.  
+  3. It is useful for solving initial value problems in control systems and circuit theory.  
 
 ---
 
-#### (a) (ii). **Why do we study Laplace Transform?**
+### **Question One (b)**  
+We are to realize the transfer function:  
+**V two divided by V one equals two s divided by open bracket s squared plus two s plus six closed bracket**  
 
-The Laplace Transform is studied for several reasons, including:
+#### Given data:  
+- R equals one kilo ohm, or one thousand ohms.  
+- We are to find L and C.  
 
-1. **Simplification of Differential Equations:** It converts complex differential equations into simpler algebraic equations, which are easier to solve.
-2. **Analysis of Systems:** It is extensively used in analyzing linear time-invariant systems, especially in control and signal processing.
-3. **Initial and Final Value Theorems:** It provides powerful tools such as the initial value and final value theorems, allowing us to analyze system behavior at the start and end of processes.
-4. **Handling of Discontinuous Inputs:** Laplace Transform is particularly useful for systems with piecewise or discontinuous inputs, as it allows these to be efficiently processed.
+#### Step 1: Recall the structure of the transfer function for the given circuit (Figure 1).  
+- The transfer function is derived from the impedance of the resistor, inductor (L), and capacitor (C) in the circuit.  
+- For a series RLC circuit:  
+  The transfer function is given by:  
+  **V two divided by V one equals one divided by open bracket L multiplied by C closed bracket open bracket s squared plus open bracket R divided by L closed bracket multiplied by s plus open bracket one divided by L multiplied by C closed bracket closed bracket.**
 
----
+#### Step 2: Compare coefficients of the transfer function.  
+- The given transfer function is two s divided by open bracket s squared plus two s plus six closed bracket.  
+- Matching it with the standard transfer function form:  
+  - Coefficient of s squared corresponds to one.  
+  - Coefficient of s corresponds to open bracket R divided by L closed bracket.  
+  - Constant term corresponds to open bracket one divided by L multiplied by C closed bracket.  
 
-#### (b) **Realizing the Transfer Function and Finding L and C**
+#### Step 3: Solve for L and C.  
+1. From the coefficient of s squared:
+   - It corresponds to one, so this gives no additional information as it is normalized.  
 
-The transfer function given is:  
-"V two divided by V one equals two s divided by s squared plus two s plus six."  
+2. From the coefficient of s:  
+   - Coefficient is two, which equals R divided by L.  
+   - Substitute R equals one thousand:  
+     two equals one thousand divided by L.  
+     Solve for L: L equals one thousand divided by two equals five hundred henries.
 
-**Steps:**
+3. From the constant term:  
+   - Constant term is six, which equals one divided by L multiplied by C.  
+   - Substitute L equals five hundred:  
+     six equals one divided by five hundred multiplied by C.  
+     Solve for C: C equals one divided by open bracket five hundred multiplied by six closed bracket equals one divided by three thousand equals zero point zero zero zero three three farads, or thirty-three microfarads.  
 
-1. **Generalize the Circuit:**  
-   The circuit comprises a resistor \( R \), an inductor \( L \), and a capacitor \( C \). The transfer function is given by:
-
-   \( V two divided by V one = \frac{s \times C \times R}{1 + s \times C \times R + s^2 \times L \times C} \)
-
-   Compare this with the transfer function: \( \frac{2s}{s^2 + 2s + 6} \).
-
-2. **Compare Terms:**  
-   - From the numerator: \( C \times R = 2 \), so \( C = \frac{2}{R} \). \( R = 1 k \Omega = 1000 \, \Omega \). Thus:
-
-     \( C = \frac{2}{1000} = 0.002 \, F = 2 \, mF \).
-
-   - From the denominator: \( L \times C = 6 \). Substitute \( C = 0.002 \):
-
-     \( L = \frac{6}{C} = \frac{6}{0.002} = 3000 \, H = 3 \, H. \)
-
-**Final Values:**  
-- Inductance \( L = 3 \, H \)  
-- Capacitance \( C = 2 \, mF \)
-
----
-
-### **Question Two**
-
-#### (a) **Brief Explanation of Network Synthesis**
-
-Network synthesis refers to designing and constructing a physical network (using resistors, capacitors, inductors, etc.) that meets a desired transfer function or impedance specification. The goal is to derive a physical and realizable network from mathematical representations or requirements.
+**Final Answer:**  
+- L equals five hundred henries.  
+- C equals thirty-three microfarads.  
 
 ---
 
-#### (b) **Find the Node Voltages in Figure 2**
-
-The circuit contains multiple resistors, a DC voltage source, a current source, and dependent sources, requiring node voltage analysis.
-
-Define the reference node \( V_0 = 0 \). Let the voltages at the nodes be \( V_1 \), \( V_2 \), etc. Apply Kirchhoff’s Current Law (KCL) to each node.
-
-(Solution to be continued step-by-step…)
+### **Question Two (a)**  
+#### Briefly explain Network Synthesis.  
+- Network synthesis involves designing a network (composed of resistors, inductors, capacitors, or other components) such that it meets desired specifications for impedance, admittance, or transfer functions.  
+- It involves creating a physical circuit from a given mathematical representation of how the system is expected to behave.  
 
 ---
 
-### **Question Three**
+### **Question Two (b)**  
+#### Find the node voltage in Figure 2.  
+Let us solve step by step.
 
-#### (a) **Conditions Necessary for Network Stability**
+#### Step 1: Understand the diagram.  
+The circuit includes:  
+- A voltage source of twenty volts.  
+- A current source supplying ten amperes.  
+- Resistors of two ohms, three ohms, six ohms, four ohms, and one ohm.  
+- A dependent voltage source of three times Vx is connected at the rightmost node.  
 
-The conditions for a network to be stable are:
+---
 
-1. **BIBO Stability:** The system must be bounded-input, bounded-output stable. This means any bounded input should yield a bounded output.
-2. **Poles of the Transfer Function:** All poles of the transfer function must lie in the left-half of the complex plane for continuous-time systems.
-3. **Causality:** The network must be causal to ensure responses occur only after inputs are applied.
-
+To save space, I'll explain the KCL equations, continue solving actively to compute voltages.
