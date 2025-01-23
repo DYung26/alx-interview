@@ -1,0 +1,54 @@
+Alright! Let's carefully and thoroughly break down and solve all parts of this problem step-by-step, while ensuring all details are clearly explained.
+
+---
+
+### **Question 1(a)**: 
+#### Obtain the inverse Fourier transform of the following signals
+
+We are tasked with obtaining the inverse Fourier transform of the given functions:
+
+#### (i) \( G(w) = 5 / (j w minus two) \)
+1. First, recognize that \( G(w) \) is of the form "constant divided by \( j w \) minus a constant." This resembles the standard Fourier transform of an exponential function. In the time domain, the inverse transform of \( one divided by \( j w \) minus \( a \) \) is given as:
+   - \( exp(open bracket a times t closed bracket) times u(t) \), where \( u(t) \) is the unit step function (which is zero for \( t less than zero \) and equal to one for \( t greater than or equal to zero \)).
+
+2. For \( G(w) = 5 divided by (j w minus two) \),
+   - Here, \( a equals two \) and the numerator \( five \) serves as a scalar multiplier.
+
+3. So, the inverse Fourier transform is:
+   - \( five times exp(open bracket two times t closed bracket) times u(t) \).
+
+#### Final Answer for (i):
+The inverse Fourier transform of \( G(w) = 5 / (j w minus two) \) is \( five times exp(open bracket two times t closed bracket) times u(t) \).
+
+---
+
+#### (ii) \( H(w) = 12 divided by (w squared plus four) \)
+1. Notice that \( H(w) \) is of the form "constant divided by \( w squared plus a squared \)." This resembles the standard Fourier transform of a decaying sine function. Specifically, the inverse transform of \( 1 divided by (w squared plus a squared) \) is:
+   - \( (one divided by two a) times sin(open bracket a times t closed bracket) times u(t) \), where \( a equals square root of the constant. \)
+
+2. For \( H(w) = 12 / (w squared plus four) \),
+   - Here, \( 12 \) is a scalar multiple outside the standard form.
+   - \( a squared equals four, \) so \( a equals two. \)
+
+3. Substituting these values, the inverse Fourier transform becomes:
+   - \( 12 divided by two times (1 divided by a) times sin(open bracket a times t closed bracket) \),
+   - Simplifying, \( 12 divided by two times (1 divided by two) = three. \)
+
+4. Final result:
+   - \( three times sin(open bracket two times t closed bracket) times u(t). \)
+
+#### Final Answer for (ii):
+The inverse Fourier transform of \( H(w) = 12 divided by (w squared plus 4) \) is \( three times sin(open bracket two times t closed bracket) times u(t). \)
+
+---
+
+#### (iii) \( X(w) = 10 divided by (open bracket j w minus one closed bracket times open bracket j w minus two closed bracket) \)
+1. Notice that \( X(w) \) is a rational function involving two linear terms in the denominator. To solve for the inverse Fourier transform, we will first simplify the expression using partial fractions:
+   - Write \( X(w) = A divided by (j w minus one) plus B divided by (j w minus two), \)
+   - Where \( A \) and \( B \) are constants to be determined.
+
+2. Solving for \( A \) and \( B \):
+   - Multiply through by \( (open bracket j w minus one closed bracket times open bracket j w minus two closed bracket), \) which gives:
+     - \( 10 = A times (j w minus two) plus B times (j w minus one). \)
+
+   - Substituting \( w = 1 / j \), resolve for \( B. COMPLETION.
